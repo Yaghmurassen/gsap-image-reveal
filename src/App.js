@@ -7,7 +7,6 @@ import "./App.scss";
 import People from "./images/people.webp";
 import { TimelineLite, Power2, gsap } from "gsap";
 import { CSSTransition } from "react-transition-group";
-
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 
 const routes = [
@@ -83,11 +82,33 @@ const App = () => {
     );
 
     tl.to(container, 0, { css: { visibility: "visible" } });
-    tl.to(imageReveal, 1.4, { width: "0%", ease: Power2.easeInOut });
-    tl.from(image, 1.4, {
-      scale: 1.6,
+    tl.to(mainReveal, 1.5, {
+      width: "100%",
+      ease: Power1.easeInOut,
+      delay: 0.5
+    });
+    tl.to(".title", 0.2, {
+      // display: "block",
+      opacity: 1
+    });
+    tl.from(".title", 1, {
+      // display: "block !important",
+      // delay: 0.8,
+      ease: "power3.out",
+      // y: 64,
+      height: "15px",
+      zIndex: 9999
+    });
+    tl.to(mainReveal, 2, {
+      left: "0px",
+      width: "0%",
       ease: Power2.easeInOut,
-      delay: -1.4
+      delay: 1
+    });
+    tl.to(".title", 1, {
+      opacity: 0,
+      ease: "power3.out",
+      delay: -2
     });
   });
 
@@ -132,3 +153,17 @@ const App = () => {
 };
 
 export default App;
+
+// tl.to(imageRevealOne, 2, { width: "0%", ease: Power2.easeInOut });
+// tl.from(imageRevealTwo, 2, { width: "100%", ease: Power2.easeInOut });
+// tl.from(
+//   image,
+//   3.5,
+//   {
+//     scale: 1.6,
+//     ease: Power2.easeInOut
+//     // delay: -1
+//   },
+//   "-=5"
+// );
+// tl.from(imageRevealTwo, 1, { width: "100%", ease: Power2.easeInOut });
