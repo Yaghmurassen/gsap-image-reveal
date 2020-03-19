@@ -1,13 +1,26 @@
 .main {
+  &:after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: burlywood;
+    top: 0;
+    left: 0;
+  }
+
   p {
     position: absolute;
-    transform: rotate(-90deg);
+    // transform: rotate(-90deg);
     top: 400px;
-    font-size: 20px;
+    font-size: 50px;
     font-weight: 700;
-    font-family: "Avenir";
+    font-family: "Montserrat";
+    z-index: 99;
     letter-spacing: 10px;
+    opacity: 0;
   }
+
   .container {
     width: 1440px;
     margin: 0 auto;
@@ -23,6 +36,7 @@
   height: 960px;
   position: relative;
   overflow: hidden;
+
   &:after {
     position: absolute;
     content: "";
@@ -32,6 +46,7 @@
     top: 0;
     right: 0;
   }
+
   img {
     width: 1440px;
     margin: 0 auto;
