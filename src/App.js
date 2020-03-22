@@ -9,7 +9,7 @@ const App = () => {
   let image = useRef(null);
   let container = useRef(null);
   let title = useRef(null);
-  // let imageRevealOne = CSSRulePlugin.getRule(".img-container:after");
+  let imageRevealOne = CSSRulePlugin.getRule(".img-container:after");
   // let imageRevealTwo = CSSRulePlugin.getRule(".img-container:before");
   let mainReveal = CSSRulePlugin.getRule(".main:before");
 
@@ -19,9 +19,18 @@ const App = () => {
     tl.to(container, 0, { css: { visibility: "visible" } });
     tl.to(mainReveal, 1.5, {
       width: "100%",
-      ease: Power1.easeInOut,
-      delay: 0.5
+      ease: Power1.easeInOut
+      // transform: "skewX(10deg)",
+      // delay: 0.5
     });
+    // tl.to(
+    //   ".main",
+    //   0,
+    //   {
+    //     transform: "skewX(-10deg)"
+    //   },
+    //   "-=1.5"
+    // );
     tl.to(".title", 0.2, {
       // display: "block",
       opacity: 1
@@ -45,6 +54,38 @@ const App = () => {
       ease: "power3.out",
       delay: -2
     });
+    // tl.to(imageRevealOne, 2, {
+    //   width: "0%",
+    //   ease: Power2.easeInOut
+    // });
+    // tl.from(imageRevealTwo, 2, { width: "100%", ease: Power2.easeInOut });
+    // tl.set(imageRevealOne, { opacity: 1 }, "+=4");
+    tl.from(
+      image,
+      3.5,
+      {
+        scale: 1.6,
+        ease: Power2.easeInOut
+        // opacity: 0
+        // delay: -1
+      },
+      "-=5"
+    );
+    tl.to(
+      imageRevealOne,
+      0,
+      {
+        opacity: 1,
+        delay: 2
+      },
+      "-=3"
+    );
+    tl.to(imageRevealOne, 2, {
+      opacity: 1,
+      width: "0%",
+      ease: Power2.easeInOut
+    });
+    // tl.from(imageRevealOne, 2, { opacity: 1 }, "+=5");
   });
 
   return (
