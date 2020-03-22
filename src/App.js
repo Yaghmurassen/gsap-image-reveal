@@ -5,7 +5,7 @@ import Jazz from "./Components/Jazz";
 import Contact from "./Components/Contact";
 import "./App.scss";
 import People from "./images/people.webp";
-import { TimelineLite, Power2, gsap } from "gsap";
+import { TimelineLite, Power1, Power2 } from "gsap";
 import { CSSTransition } from "react-transition-group";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 
