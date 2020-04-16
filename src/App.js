@@ -84,7 +84,7 @@ const App = () => {
     tl.to(container, 0, { css: { visibility: "visible" } });
     tl.to(mainReveal, 1.5, {
       width: "100%",
-      ease: Power1.easeInOut,
+      ease: "Power1.easeInOut",
       delay: 0.5
     });
     tl.to(".title", 0.2, {
